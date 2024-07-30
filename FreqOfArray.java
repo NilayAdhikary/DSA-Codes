@@ -152,7 +152,7 @@ public class FreqOfArray {
         }
 
         // fetch
-        char ch = 'C';
+        char ch = 'D';
         // for(Map.Entry<Character, Integer> entry : map.entrySet()){
         //     if(entry.getKey() == ch){
         //         System.out.println("Character " + ch + " appears " + entry.getValue() + " times!!");
