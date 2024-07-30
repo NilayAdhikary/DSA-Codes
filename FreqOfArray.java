@@ -100,36 +100,31 @@ public class FreqOfArray {
 
         // ------------------------------------------------
 
-        // 4) FREQUENCY OF ARRAY USING HASHMAP :-
+        // 4) FREQUENCY OF NUMBER ARRAY USING HASHMAP :-
         // int arr[] = { 2, 5, 37, 4, 2, 37, 9, 5, 2 };
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Size of the array : " );
-        int n = sc.nextInt();
+        // Scanner sc = new Scanner(System.in);
+        // System.out.println("Enter Size of the array : " );
+        // int n = sc.nextInt();
 
-        int[] arr = new int[n];
-        System.out.println("Enter the array elements :" );
-        for(int i = 0; i<n; i++){
-            arr[i] = sc.nextInt();
-        }
+        // int[] arr = new int[n];
+        // System.out.println("Enter the array elements :" );
+        // for(int i = 0; i<n; i++){
+        //     arr[i] = sc.nextInt();
+        // }
 
-        // Precomputation
-        Map<Integer, Integer> map = new HashMap<>();
-        for(int item : arr){
-            map.put(item, map.getOrDefault(item, 0) + 1);
-        }
+        // // Precomputation
+        // Map<Integer, Integer> map = new HashMap<>();
+        // for(int item : arr){
+        //     map.put(item, map.getOrDefault(item, 0) + 1);
+        // }
         
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
-        for(Map.Entry<Integer, Integer> entry : map.entrySet()){
-            if(entry.getValue() > max){
-                max = entry.getValue();
-            }
-            if(entry.getValue() < min){
-                min = entry.getValue();
-            }
-        }
-        System.out.println( max+" "+min );
+        // int max = Integer.MIN_VALUE;
+        // for(Map.Entry<Integer, Integer> entry : map.entrySet()){
+        //     if(entry.getValue() > max){
+        //         max = entry.getValue();
+        //     }
+        // }
 
         // Taking test cases:
         // System.out.println("Enter q : ");
@@ -142,5 +137,28 @@ public class FreqOfArray {
         //     // fetch
         //     System.out.println("Freq of " + num + " is " + map.getOrDefault(num, 0));
         // }
+
+        // ------------------------------------------------
+
+        // 4) FREQUENCY OF CHARACTER ARRAY USING HASHMAP :-
+        // T.c. -> O(N) where N is the length of the string. Since the loops iterates through the entire ip string.
+        // S.C. -> it is also O(N) as in worst case all the characters in the string are distinct and it takes N spaces to store them in the map.
+        String str = "433TUHcee3wCc";
+
+        // pre-computation
+        Map<Character, Integer> map = new HashMap<>();
+        for(int i = 0; i<str.length(); i++){
+            map.put(str.charAt(i), map.getOrDefault(str.charAt(i), 0) + 1);
+        }
+
+        // fetch
+        char ch = 'C';
+        // for(Map.Entry<Character, Integer> entry : map.entrySet()){
+        //     if(entry.getKey() == ch){
+        //         System.out.println("Character " + ch + " appears " + entry.getValue() + " times!!");
+        //     }
+        // }
+        int freq = map.getOrDefault(ch, 0);
+        System.out.println("Character " + ch + " appears " + freq + " times!!");
     }
 }
