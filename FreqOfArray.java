@@ -1,6 +1,5 @@
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 
 public class FreqOfArray {
@@ -152,7 +151,7 @@ public class FreqOfArray {
         }
 
         // fetch
-        char ch = 'D';
+        char ch = 'C';
         // for(Map.Entry<Character, Integer> entry : map.entrySet()){
         //     if(entry.getKey() == ch){
         //         System.out.println("Character " + ch + " appears " + entry.getValue() + " times!!");
