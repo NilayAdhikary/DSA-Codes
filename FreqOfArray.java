@@ -130,7 +130,6 @@ public class FreqOfArray {
             }
         }
         System.out.println( max+" "+min );
-        System.out.println(max);
 
         // Taking test cases:
         // System.out.println("Enter q : ");
