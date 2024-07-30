@@ -1,4 +1,4 @@
-public class Test {
+public class ReverseNumber {
     public static int reverseNumber(int n){
         int temp = n;
         if(n<0){
