@@ -1,4 +1,4 @@
-package Basics;
+// package Basics;
 public class CheckPrime {
     public static void main(String[] args) {
         int n = 89;
