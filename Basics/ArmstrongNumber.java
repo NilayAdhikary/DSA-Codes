@@ -1,3 +1,4 @@
+package Basics;
 public class ArmstrongNumber {
     public static void main(String[] args) {
         int n = 847339;
