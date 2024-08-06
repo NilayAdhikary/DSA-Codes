@@ -7,47 +7,7 @@ public class SecondLargestElement {
         
         int n = arr.length;
         findSecondLargest(arr, n);
-        findSecondSmallest(arr, n);
     }
-
-    private static void findSecondSmallest(int[] arr, int n) {
-
-        int smallest = arr[0];
-        int secSmallest = Integer.MAX_VALUE;
-
-
-        // Sol -1 ) Better Solution :
-        // T.c. -> O(N+N) = O(2N);
-
-        // for (int i = 0; i < n; i++) {
-        //     if (arr[i] < smallest) {
-        //         smallest = arr[i];
-        //     }
-        // }
-        // for (int i = 0; i < n; i++) {
-        //     if (arr[i] < secSmallest && arr[i] > smallest) {
-        //         secSmallest = arr[i];
-        //     }
-        // }
-
-
-        // Sol - 2 ) Optimal Solution :
-        // T.c. -> O(N)
-
-        for(int i = 0; i<n; i++){
-            if(arr[i] < smallest){
-                secSmallest = smallest;
-                smallest = arr[i];
-            }else if(arr[i] < secSmallest && arr[i] != smallest){
-                secSmallest = arr[i];
-            }
-        }
-
-        System.out.println("Smallest Elemnt = " + smallest);
-        System.out.println("Second Smallest Elemnt = " + secSmallest);
-
-    }
-
 
     private static void findSecondLargest(int[] arr, int n) {
         
