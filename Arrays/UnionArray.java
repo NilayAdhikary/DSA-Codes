@@ -5,6 +5,7 @@ public class UnionArray {
         int a[] = {1,2,2,4,7,8,8,9};
         int b[] = {2,3,3,4,6,9,9,12};
         ArrayList<Integer> unionArr = findUnionArray(a,b,a.length,b.length);
+        System.out.print("Union Array : ");
         for(int element : unionArr){
             System.out.print(element + " ");
         }
@@ -27,37 +28,38 @@ public class UnionArray {
         // ArrayList<Integer> unionArr = new ArrayList<>(set);
         // return unionArr;
 
-        // Optimal : ------------------------------------
+        // 2) Optimal : ---------------------------------
         // use two pointer approach....
 
         // T.c. -> O(m+n) for the first while loops
         // S.C. -> O(m+n) for the worst case, when all the elements are unique in both the arrays.
 
         ArrayList<Integer> unionArr = new ArrayList<>();
-        int i = 0, j = 0;
+        int i = 0;
+        int j = 0;
         while(i<n && j<m){
             if(a[i] <= b[j]){
-                if(unionArr.size() == 0 || unionArr.get(unionArr.size()-1) != a[i]){
+                if (unionArr.size() == 0 || unionArr.get(unionArr.size()-1) != a[i]) {
                     unionArr.add(a[i]);
-                } 
+                }
                 i++;
-            }else{
-                if(unionArr.size() == 0 || unionArr.get(unionArr.size()-1) != b[j]){
+            } else {
+                if (unionArr.size() == 0 || unionArr.get(unionArr.size() - 1) != b[j]) {
                     unionArr.add(b[j]);
-                } 
+                }
                 j++;
             }
         }
-        while(i<n){
-            if(unionArr.get(unionArr.size()-1) != a[i]){
+        while (i < n) {
+            if (unionArr.get(unionArr.size() - 1) != a[i]) {
                 unionArr.add(a[i]);
-            } 
+            }
             i++;
         }
-        while(j<m){
-            if(unionArr.get(unionArr.size()-1) != b[j]){
+        while (j < m) {
+            if (unionArr.get(unionArr.size() - 1) != b[j]) {
                 unionArr.add(b[j]);
-            } 
+            }
             j++;
         }
         return unionArr;
